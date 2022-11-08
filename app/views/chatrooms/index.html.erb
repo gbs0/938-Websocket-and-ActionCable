@@ -1,0 +1,43 @@
+
+
+
+<div class="row">
+    <div class="col-sm-6">
+      <h1>Chatrooms</h1>
+    </div>
+  
+    <div class="col-sm-6 text-end">
+    </div>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+      
+  
+              <th>Title</th>
+              <th>Messages Number</th>
+              
+            <th></th>
+          
+        </tr>
+      </thead>
+  
+      <tbody>
+        <% @chatrooms.each do |chatroom| %>
+          <%= content_tag :tr, id: dom_id(chatroom) do %>
+            
+  
+                        <td><%= chatroom.name %></td>
+                        <td><%= chatroom.messages.count %></td>
+            
+            
+              <td><%= link_to 'Show', chatroom %></td>
+            
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
